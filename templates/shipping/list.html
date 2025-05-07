@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}
+{% endblock %}
+{% block content %}
+<div>
+{% for item in items %}
+{{ item.as_p }}
+{% endblock %}
+</div>
+
+{% endblock %}

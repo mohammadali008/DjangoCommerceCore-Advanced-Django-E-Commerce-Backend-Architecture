@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}
+    Product-List
+{% endblock %}
+{% block content %}
+<h1>Hellow</h1>
+<h2>{{ request.user.username }}</h2>
+{% for product in products %}
+<div>
+    <a href={{ product.category.get_absolute_url }}><h2>{{ product.title }}</h2></a>
+{#    <a href={% url 'product_detail' product.pk %}><h2>{{ product.title }}</h2></a>#}
+</div>
+    <div>
+    <h3>{{ product.upc }}</h3>
+    </div>
+    <div>
+    {% for product_image in products.images.all %}
+        <img src="{{ product_image.url }}" alt="">
+        {% endfor %}
+    <div
+    </div>
+    </div>
+{% endfor %}
+{% endblock %}
